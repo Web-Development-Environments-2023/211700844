@@ -330,7 +330,14 @@
                     <label  for="f6"><span style="font-size: 40px;">Message 
                         <span style=" color:red;">*</span></span><br/><textarea id="text" name="Message"  placeholder="Write your message"  class="textarea-field"  style="height: 150px; width: 350px; font-size: 16px;" required></textarea> 
                         <br/><br/>
-
+                    <script>
+                        jQuery(document).ready(function ()
+                        {
+                            jQuery("#text").emojioneArea({
+                                pickerPosition: "bottom"
+                            });
+                        })
+                    </script>
                     </script>
                     </label>
                     <label><span> </span><input type="submit" value="Submit" style="height: 50px; width: 350px; font-size: 30px;"/></label>
