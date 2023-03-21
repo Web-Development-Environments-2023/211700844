@@ -1,11 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" href="emojionearea.min.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="emojionearea.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="design.css" />
     <title>Yoram Gaon</title>
 </head>
 <body>
@@ -199,7 +195,7 @@
             </p>
             <p class="text">ניתן לגלוש באתר זה בקלות באמצעות סריקת הברקוד הבא
             </p>
-            <img src="QR.PNG" style="width: 40% ;height:40%;" />	
+            <img src="QR.png" style="width: 15% ;height:15%;" />	
         </center>
     </section>
 
@@ -330,14 +326,37 @@
                     <label  for="f6"><span style="font-size: 40px;">Message 
                         <span style=" color:red;">*</span></span><br/><textarea id="text" name="Message"  placeholder="Write your message"  class="textarea-field"  style="height: 150px; width: 350px; font-size: 16px;" required></textarea> 
                         <br/><br/>
+                    <select id="smiley-selector">
+                      <option value="">Select a smiley</option>
+                      <option value="😀">😀</option>
+                      <option value="😃">😃</option>
+                      <option value="😄">😄</option>
+                      <option value="😁">😁</option>
+                      <option value="😆">😆</option>
+                      <option value="😊">😊</option>
+                      <option value="😍">😍</option>
+                      <option value="😘">😘</option>
+                      <option value="😜">😜</option>
+                      <option value="😝">😝</option>
+                      <option value="😛">😛</option>
+                      <option value="😎">😎</option>
+                      <option value="😏">😏</option>
+                      <option value="😔">😔</option>
+                      <option value="😞">😞</option>
+                      <option value="😢">😢</option>
+                      <option value="😭">😭</option>
+                      <option value="😤">😤</option>
+                      <option value="😠">😠</option>
+                      <option value="😡">😡</option>
+                    </select>
                     <script>
-                        jQuery(document).ready(function ()
-                        {
-                            jQuery("#text").emojioneArea({
-                                pickerPosition: "bottom"
-                            });
-                        })
-                    </script>
+                        var textBox = document.getElementById("text");
+                        var smileySelector = document.getElementById("smiley-selector");
+                        smileySelector.addEventListener("change", function() {
+                          var selectedSmiley = smileySelector.value;
+                          textBox.value += selectedSmiley;
+                        });
+                      </script>
                     </script>
                     </label>
                     <label><span> </span><input type="submit" value="Submit" style="height: 50px; width: 350px; font-size: 30px;"/></label>
